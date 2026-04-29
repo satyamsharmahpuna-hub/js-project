@@ -1,0 +1,91 @@
+:root {
+    --primary: #6c5ce7;
+    --glass: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    background: #0f0c29;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Glass Effect Container */
+.glass-container {
+    width: 90%;
+    height: 85vh;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.sidebar {
+    padding: 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo { color: var(--primary); margin-bottom: 50px; letter-spacing: 2px; }
+
+.sidebar ul { list-style: none; }
+.sidebar li { color: #ccc; margin: 20px 0; cursor: pointer; transition: 0.3s; }
+.sidebar li.active, .sidebar li:hover { color: white; font-weight: bold; }
+
+.content { padding: 40px; color: white; overflow-y: auto; }
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timer-display { font-size: 3rem; margin: 20px 0; font-weight: bold; color: var(--primary); }
+
+button {
+    background: var(--primary);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover { transform: scale(1.05); }
+
+.task-input { display: flex; gap: 10px; margin-bottom: 15px; }
+.task-input input {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    flex: 1;
+}
+
+#taskList { list-style: none; }
+#taskList li {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
